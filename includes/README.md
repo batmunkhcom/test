@@ -1,3 +1,0 @@
-settings
-database connection
-
