@@ -13,6 +13,7 @@ while ($obj = $data->fetch_object()) {
     echo $obj->id.'. ';
     echo $obj->username.'. ';
     echo $obj->created_at.'...';
+    echo '<a href="delete_user.php?id='.$obj->id.'">Delete</a>';
     
 } 
 
