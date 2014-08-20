@@ -12,8 +12,9 @@ if(strlen($_POST['username']) < 5){
 }else{
     
     $query = "INSERT INTO users (username,pass,created_at) "
-            . " VALUES('".  addcslashes($_POST['username'])."','".md5($_POST['pass1'])."','".date("Y-m-d H:i:s")."') ";
+            . " VALUES('".  addslashes($_POST['username'])."','".md5($_POST['pass1'])."','".date("Y-m-d H:i:s")."') ";
 //            . " VALUES('".$_POST['username']."','".md5($_POST['pass1'])."',NOW()) ";
     
-    $mysqli->query($query) OR die("Burtgel amjiltgui.. ".  mysqli_errno($mysqli));
+    $mysqli->query($query) OR die("Burtgel amjiltgui.. ".  mysqli_error($mysqli));
+    echo 'Amjilttai burtgelee...';
 }
